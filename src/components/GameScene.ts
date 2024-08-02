@@ -1,8 +1,9 @@
 import Phaser from 'phaser';
 import MoveTo from 'phaser3-rex-plugins/plugins/moveto.js';
 import Player from './Player';
-import Enemy from './Enemy';
 import UIScene from './UIScene'
+import EnemyManager from './EnemyManager';
+import Enemy from './Enemy2';
 
 export default class GameScene extends Phaser.Scene {
 
@@ -20,6 +21,7 @@ export default class GameScene extends Phaser.Scene {
       this.load.image('background', 'assets/gameBg.png')
       this.load.spritesheet('enemyCap', 'assets/cap.png', { frameWidth: 420, frameHeight: 439 })
       this.load.spritesheet('player', 'assets/playerFrog.png', { frameWidth: 270, frameHeight: 270 })
+      this.load.spritesheet('wing', 'assets/wing.png', { frameWidth: 30, frameHeight: 30 })
     }
 
     create()
@@ -29,7 +31,8 @@ export default class GameScene extends Phaser.Scene {
       this.background.setPosition(this.scale.width / 2, this.scale.height / 2);
 
       this.player = new Player(this);
-      this.enemyClass = new Enemy(this, this.player, this.ui)
+      // this.enemyClass = new Enemy(this, this.player, this.ui)
+      this.enemyClass = new EnemyManager(this, this.player, this.ui);
       this.camera = this.cameras.main;      
     }
 
