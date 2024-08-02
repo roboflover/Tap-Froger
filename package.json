@@ -14,8 +14,8 @@
 		"type": "git",
 		"url": "https://github.com/ourcade/phaser3-parcel-template.git"
 	},
-	"homepage": "https://github.com/ourcade/phaser3-parcel-template",
-	"devDependencies": {
+		"homepage": ".",
+		"devDependencies": {
 		"@babel/core": "^7.10.5",
 		"@babel/plugin-proposal-class-properties": "^7.10.4",
 		"babel-eslint": "^10.1.0",
