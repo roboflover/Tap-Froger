@@ -31,7 +31,7 @@ export default class EnemyManager extends Phaser.Physics.Arcade.Sprite {
 
             while (!validPosition) {
                 x = Phaser.Math.Between(100, this.scene.scale.width - 50);
-                y = Phaser.Math.Between(50, 1000);
+                y = Phaser.Math.Between(100, 1200);
                 validPosition = true;
 
                 for (const enemy of this.enemies) {

@@ -17,7 +17,7 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     minWidth: number;
     maxWidth: number;
     newWidth: number;
-    currentWidth: number; // Добавляем свойство currentWidth
+    currentWidth: number; 
     angle: number;
     endPointX: number;
     endPointY: number;
@@ -29,18 +29,18 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
         this.rectWidth = 50;
         this.rectHeight = 50;
         this.centerX = scene.scale.width / 2;
-        this.bottomY = scene.scale.height - this.rectHeight;
+        this.bottomY = scene.scale.height - (this.rectHeight);
         this.targetX = 0;
         this.targetY = 0;
         this.endPointX = 0;
         this.endPointY = 0;
         this.tooglePlayerScale = false;
-        this.targetWidth = 100; // Пример значения
+        this.targetWidth = 100;
         this.targetHeight = 20
-        this.minWidth = 50; // Пример значения
+        this.minWidth = 50; 
         this.maxWidth = 2500
-        this.newWidth = 50; // Пример значения
-        this.currentWidth = 50; // Начальное значение текущей ширины
+        this.newWidth = 50; 
+        this.currentWidth = 50;
         this.angle = 0;
         this.create();
         this.isFire = false
@@ -62,7 +62,7 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
         
         const rectWidth = 50  
         const rectHeight = 20 
-        const offset = 10 
+        const offset = 100
 
         this.centerX = (windowWidth - rectWidth) / 2;
         this.bottomY = windowHeight - rectHeight - offset;

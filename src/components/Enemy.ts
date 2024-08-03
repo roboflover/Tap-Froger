@@ -1,9 +1,6 @@
 import Phaser from 'phaser';
 
 export default class Enemy extends Phaser.Physics.Arcade.Sprite {
-    private leftWing!: Phaser.GameObjects.Sprite;
-    private rightWing!: Phaser.GameObjects.Sprite;
-    private container!: Phaser.GameObjects.Container;
 
     constructor(scene: Phaser.Scene, x: number, y: number) {
         super(scene, x, y, 'enemyCap');

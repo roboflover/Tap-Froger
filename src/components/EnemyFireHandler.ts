@@ -84,16 +84,17 @@ export default class EnemyFireHandler {
             const enemyBounds = enemy.getBounds();
             if (Phaser.Geom.Rectangle.Contains(enemyBounds, currentX, currentY)) {
                 this.showScoreText(enemy.x, enemy.y);
-                //enemiesToRemove.push(enemy);
 
-                const xOffset = enemy.x < this.scene.scale.width / 2 ? -90 : this.scene.scale.width + 90;
-                enemy.x = xOffset;
+                const randomSide = Math.random() < 0.5 ? -90 : this.scene.scale.width + 90;
+                enemy.x = randomSide;
+        
                 const body = enemy.body as Phaser.Physics.Arcade.Body;
                 body.updateFromGameObject();
                 this.ui.increaseScore(1);
                 this.scene.events.emit('enemy-destroyed');
             }
         });
+        
 
         enemiesToRemove.forEach((enemy) => {
             const index = this.enemyManager.getEnemies().indexOf(enemy);
