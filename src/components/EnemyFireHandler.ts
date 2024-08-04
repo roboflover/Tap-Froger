@@ -65,7 +65,7 @@ export default class EnemyFireHandler {
     
         const currentX = Phaser.Math.Linear(startX, endX, this.progress);
         const currentY = Phaser.Math.Linear(startY, endY, this.progress);
-        const collisionRadius = 50; // Adjust the value for greater or smaller radius
+        const collisionRadius = 90; // Adjust the value for greater or smaller radius
     
         this.trackingCircle.clear();
     
@@ -86,10 +86,8 @@ export default class EnemyFireHandler {
             const enemyCenterX = enemyBounds.x + enemyBounds.width / 2;
             const enemyCenterY = enemyBounds.y + enemyBounds.height / 2;
     
-            // Create a circle with the specified collision radius around the current contact point
             const collisionCircle = new Phaser.Geom.Circle(currentX, currentY, collisionRadius);
     
-            // Check if the circle contains the enemy's center position
             if (Phaser.Geom.Circle.Contains(collisionCircle, enemyCenterX, enemyCenterY)) {
                 this.showScoreText(enemy.x, enemy.y);
     
