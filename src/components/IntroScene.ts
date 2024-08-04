@@ -71,7 +71,6 @@ export class IntroScene extends Phaser.Scene {
     const buttonY = this.scale.height - buttonMarginBottom; 
     const buttonHomeY = buttonY - buttonSpacing - buttonBackground.height; 
 
-    // 1. Кнопка "Play"
     buttonBackground.setOrigin(0.5);
     buttonBackground.setScale(0.9); // Масштабирую кнопку по необходимости
     buttonBackground.setInteractive();
@@ -90,24 +89,23 @@ export class IntroScene extends Phaser.Scene {
       this.scene.start('hello-world');
     });
 
-    // 2. Кнопка "Go to Home"
-    const buttonHomeBackground = this.add.image(this.scale.width / 2, this.scale.height-185, 'buttonBlue');
-    buttonHomeBackground.setOrigin(0.5);
-    buttonHomeBackground.setScale(0.9); // Масштабирую кнопку по необходимости
-    buttonHomeBackground.setInteractive();
+    // const buttonHomeBackground = this.add.image(this.scale.width / 2, this.scale.height-185, 'buttonBlue');
+    // buttonHomeBackground.setOrigin(0.5);
+    // buttonHomeBackground.setScale(0.9); // Масштабирую кнопку по необходимости
+    // buttonHomeBackground.setInteractive();
 
-    const homeButton = this.add.text(buttonHomeBackground.x, buttonHomeBackground.y, 'Go to Home', {
-      color: '#fff',
-      fontSize: '40px',
-      fontFamily: 'Tahoma',
-      fontStyle: 'bold'
-    }).setOrigin(0.5).setInteractive();
+    // const homeButton = this.add.text(buttonHomeBackground.x, buttonHomeBackground.y, 'Go to Home', {
+    //   color: '#fff',
+    //   fontSize: '40px',
+    //   fontFamily: 'Tahoma',
+    //   fontStyle: 'bold'
+    // }).setOrigin(0.5).setInteractive();
 
-    buttonHomeBackground.on('pointerdown', () => {
-      this.scene.start('home-scene'); // Измените на вашу сцену домашней страницы
-    });
-    homeButton.on('pointerdown', () => {
-      this.scene.start('home-scene'); // Измените на вашу сцену домашней страницы
-    });
+    // buttonHomeBackground.on('pointerdown', () => {
+    //   this.scene.start('home-scene'); // Измените на вашу сцену домашней страницы
+    // });
+    // homeButton.on('pointerdown', () => {
+    //   this.scene.start('home-scene'); // Измените на вашу сцену домашней страницы
+    // });
   }
 }
